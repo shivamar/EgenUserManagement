@@ -10,7 +10,7 @@ public class User {
 	long phoneNumber;
 	long zipCode;
 	
-	User(int id, String firstName, String middleName, String lastName,int age, String gender,long phone,long zip)
+	public User(int id, String firstName, String middleName, String lastName,int age, String gender,long phone,long zip)
 	{
 		this.id = id;
 		this.firstName=firstName;
@@ -25,4 +25,19 @@ public class User {
 	public int getID() {	
 		return id;
 	}
+
+	public void setPhone(long phone) {
+		phoneNumber = phone;		
+	}
 }
+
+/**
+ * {"id":32,
+"firstName":"kalyan",
+"middleName":"ram",
+"lastName":"ram",
+"age":411,
+"gender":"male",
+"phoneNumber":8111,
+"zipCode":95035}
+**/

@@ -6,7 +6,7 @@ import java.util.List;
 import model.User;
 
 public class UserDAO {			
-	 HashMap<Integer, User> hmap = new HashMap<>();	 
+	HashMap<Integer, User> hmap = new HashMap<>();	 
 	 
 	 public List<User> getAllUsers() {	
 		 List<User> li = new ArrayList<>();
@@ -17,7 +17,7 @@ public class UserDAO {
 		 }		    
 		return li;
 	 }
-	 
+ 
 	public boolean createUser(User newUser) {		
 		User val = hmap.putIfAbsent(newUser.getID(), newUser);
 		
@@ -32,8 +32,10 @@ public class UserDAO {
 
 	public void updateUser(User user) {
 		int id = user.getID();		
-		User prev = hmap.put(id, user);
-		
-		if(prev == null) System.out.println("test");
+		hmap.put(id, user);			
+	}
+
+	public void resetDataStore() {
+		hmap=new HashMap<>();		
 	}	   
 }

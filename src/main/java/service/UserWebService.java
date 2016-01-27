@@ -14,7 +14,7 @@ public class UserWebService {
 	private static final UserController userController = new UserController();
 	
 	public static void main(String[] args)
-	{				      
+	{		
 		setPort(4567);
 		get("/users", (request, response) -> getAllUsers());
 
@@ -53,13 +53,6 @@ public class UserWebService {
      		return "Error Message : ID value conflict between id in request body versus id in query parameter";
      	}
      	
-     	if(userController.isUserExists(id_query)){     		
-     		userController.updateUser(user);
-     		return "{\""+id+"\" : \"Updated\" }";
-     	}        		
-     	else{
-     		response.status(404);
-     		return "{\"result\" : \"User Not Found\"}";
-     	}
+     	return userController.updateUser(user, response);     	
      }
 }
