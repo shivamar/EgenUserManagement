@@ -9,13 +9,10 @@ import spark.Request;
 import spark.Response;
 import controllers.UserController;
 
-public class UserWebService {
-	
+public class UserWebService {	
 	private static final UserController userController = new UserController();
 	
-	public static void main(String[] args)
-	{		
-		setPort(4567);
+	public static void main(String[] args){		
 		get("/users", (request, response) -> getAllUsers());
 
 		put("/user/:id", (request, response) -> updateUser(request.params(":id"), request, response));
@@ -23,8 +20,7 @@ public class UserWebService {
         post("/create", (request, response) -> createUser(request, response));
     }
 	
-	 private static String getAllUsers() {
-		 
+	private static String getAllUsers() {		 
 		return userController.getAllUsers();
 	}
 

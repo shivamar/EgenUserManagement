@@ -60,7 +60,7 @@ public class UserControllerTest {
 	    List<User> user_list = userDAO.getAllUsers();		    
 	    User user = user_list.get(0);
 	    
-	    user.setPhone(71636157);
+	    user.setPhone(Long.valueOf("7163615745"));
 	    
 	    Response response = EasyMock.createMock(Response.class);
 	    

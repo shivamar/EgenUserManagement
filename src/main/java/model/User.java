@@ -27,7 +27,7 @@ public class User {
 	}
 
 	public void setPhone(long phone) {
-		phoneNumber = phone;		
+		phoneNumber = phone;
 	}
 }
 
